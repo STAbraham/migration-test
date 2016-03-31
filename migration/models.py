@@ -21,5 +21,3 @@ class Class_Directory(models.Model):
 class Friends(models.Model):
     person = models.ForeignKey(Person, related_name="person")
     friend = models.ForeignKey(Person, related_name="friend")
-
-
