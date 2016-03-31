@@ -10,16 +10,9 @@ class Person(models.Model):
     last_name = models.CharField(max_length=50, default='')
     telephone_number = models.BigIntegerField(null=True)
 
-class Class(models.Model):
-    graduation_year = models.IntegerField()
-    university = models.ForeignKey(University)
-
 class Class_Directory(models.Model):
     person = models.ForeignKey(Person, null=True)
-    class_index = models.ForeignKey(Class, null=True)
 
 class Friends(models.Model):
     person = models.ForeignKey(Person, related_name="person")
     friend = models.ForeignKey(Person, related_name="friend")
-
-
